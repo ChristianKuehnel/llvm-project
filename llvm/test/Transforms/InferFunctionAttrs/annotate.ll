@@ -511,13 +511,13 @@ declare i64 @fwrite(i8*, i64, i64, %opaque*)
 ; CHECK: declare i32 @getc(%opaque* nocapture) [[G1]]
 declare i32 @getc(%opaque*)
 
-; CHECK: declare i32 @getc_unlocked(%opaque* nocapture) [[G1]]
+; CHECK: declare i32 @getc_unlocked(%opaque*){{$}}
 declare i32 @getc_unlocked(%opaque*)
 
 ; CHECK: declare i32 @getchar() [[G1]]
 declare i32 @getchar()
 
-; CHECK: declare i32 @getchar_unlocked() [[G1]]
+; CHECK: declare i32 @getchar_unlocked(){{$}}
 declare i32 @getchar_unlocked()
 
 ; CHECK: declare i8* @getenv(i8* nocapture) [[G2]]
@@ -706,7 +706,7 @@ declare i32 @putc(i32, %opaque*)
 ; CHECK: declare i32 @putchar(i32) [[G1]]
 declare i32 @putchar(i32)
 
-; CHECK: declare i32 @putchar_unlocked(i32) [[G1]]
+; CHECK: declare i32 @putchar_unlocked(i32){{$}}
 declare i32 @putchar_unlocked(i32)
 
 ; CHECK: declare i32 @puts(i8* nocapture readonly) [[G1]]
