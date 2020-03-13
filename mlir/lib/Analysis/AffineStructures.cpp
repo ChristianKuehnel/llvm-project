@@ -1201,7 +1201,7 @@ static bool detectAsMod(const FlatAffineConstraints &cst, unsigned pos,
   return false;
 }
 
-// Gather all lower and upper bounds of the identifier at `pos`.
+/// Gather all lower and upper bounds of the identifier at `pos`.
 static void getLowerAndUpperBoundIndices(const FlatAffineConstraints &cst,
                                          unsigned pos,
                                          SmallVectorImpl<unsigned> *lbIndices,

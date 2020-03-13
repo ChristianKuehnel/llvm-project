@@ -314,7 +314,7 @@ public:
   /// Projects out the identifier that is associate with Value .
   void projectOut(Value id);
 
-  // Removes the specified identifier from the system.
+  /// Removes the specified identifier from the system.
   void removeId(unsigned pos);
 
   void removeEquality(unsigned pos);
