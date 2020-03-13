@@ -840,5 +840,4 @@ TEST(FunctionDecl, ExceptionSpecifications) {
                               Lang_CXX11));
 }
 
-
 } // end namespace
