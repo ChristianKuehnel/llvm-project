@@ -9,11 +9,26 @@ class LLVMType<ValueType vt> {
   int isAny = 0;
 }
 
+class LLVMQualPointerType<LLVMType elty, int addrspace>
+  : LLVMType<iPTR>{
+  LLVMType ElTy = elty;
+  int AddrSpace = addrspace;
+}
+
+class LLVMPointerType<LLVMType elty>
+  : LLVMQualPointerType<elty, 0>;
+
+def llvm_i8_ty         : LLVMType<i8>;
 def llvm_i32_ty        : LLVMType<i32>;
+def llvm_ptr_ty        : LLVMPointerType<llvm_i8_ty>;
 
 class IntrinsicProperty;
 def IntrNoMem : IntrinsicProperty;
 def IntrHasSideEffects : IntrinsicProperty;
+def IntrReadMem : IntrinsicProperty;
+def IntrArgMemOnly : IntrinsicProperty;
+def IntrInaccessibleMemOnly : IntrinsicProperty;
+def IntrInaccessibleMemOrArgMemOnly : IntrinsicProperty;
 
 
 class Intrinsic<list<LLVMType> ret_types,
@@ -31,9 +46,38 @@ class Intrinsic<list<LLVMType> ret_types,
   bit isTarget = 0;
 }
 
-// ... this intrinsic.
-def int_random_gen   : Intrinsic<[llvm_i32_ty], [], [IntrNoMem, IntrHasSideEffects]>;
+// ... these intrinsic.
 
-// CHECK: 1, // llvm.random.gen
+// CHECK: 1, // llvm.random.gen.no.mem
+// CHECK: 2, // llvm.random.gen.read.arg.mem
+// CHECK: 3, // llvm.random.gen.read.inaccessible.mem
+// CHECK: 4, // llvm.random.gen.read.inaccessible.mem.or.arg.mem
+// CHECK: 5, // llvm.random.gen.read.mem
+
+// CHECK: case 5:
+// CHECK-NEXT: Atts[] = {Attribute::NoUnwind}
+def int_random_gen_read_mem
+    : Intrinsic<[llvm_i32_ty], [], [IntrReadMem, IntrHasSideEffects]>;
+
+// CHECK: case 4:
+// CHECK-NEXT: Atts[] = {Attribute::NoUnwind}
+def int_random_gen_read_inaccessible_mem_or_arg_mem
+    : Intrinsic<[llvm_i32_ty], [], [IntrReadMem,IntrInaccessibleMemOrArgMemOnly,
+                                    IntrHasSideEffects]>;
+
+// CHECK: case 2:
+// CHECK-NEXT: Atts[] = {Attribute::NoUnwind}
+def int_random_gen_read_arg_mem
+    : Intrinsic<[llvm_i32_ty], [llvm_ptr_ty], [IntrReadMem, IntrArgMemOnly,
+                                               IntrHasSideEffects]>;
+
+// CHECK: case 3:
+// CHECK-NEXT: Atts[] = {Attribute::NoUnwind}
+def int_random_gen_read_inaccessible_mem
+    : Intrinsic<[llvm_i32_ty], [], [IntrReadMem, IntrInaccessibleMemOnly,
+                                    IntrHasSideEffects]>;
+
 // CHECK: case 1:
 // CHECK-NEXT: Atts[] = {Attribute::NoUnwind}
+def int_random_gen_no_mem
+    : Intrinsic<[llvm_i32_ty], [], [IntrNoMem, IntrHasSideEffects]>;
