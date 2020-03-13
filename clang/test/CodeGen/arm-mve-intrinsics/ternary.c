@@ -135,7 +135,7 @@ float32x4_t test_vfmsq_f32(float32x4_t a, float32x4_t b, float32x4_t c) {
 int8x16_t test_vmlaq_n_s8(int8x16_t a, int8x16_t b, int8_t c) {
 #ifdef POLYMORPHIC
   return vmlaq(a, b, c);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlaq_n_s8(a, b, c);
 #endif /* POLYMORPHIC */
 }
@@ -151,7 +151,7 @@ int8x16_t test_vmlaq_n_s8(int8x16_t a, int8x16_t b, int8_t c) {
 int16x8_t test_vmlaq_n_s16(int16x8_t a, int16x8_t b, int16_t c) {
 #ifdef POLYMORPHIC
   return vmlaq(a, b, c);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlaq_n_s16(a, b, c);
 #endif /* POLYMORPHIC */
 }
@@ -167,7 +167,7 @@ int16x8_t test_vmlaq_n_s16(int16x8_t a, int16x8_t b, int16_t c) {
 int32x4_t test_vmlaq_n_s32(int32x4_t a, int32x4_t b, int32_t c) {
 #ifdef POLYMORPHIC
   return vmlaq(a, b, c);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlaq_n_s32(a, b, c);
 #endif /* POLYMORPHIC */
 }
@@ -183,7 +183,7 @@ int32x4_t test_vmlaq_n_s32(int32x4_t a, int32x4_t b, int32_t c) {
 uint8x16_t test_vmlaq_n_u8(uint8x16_t a, uint8x16_t b, uint8_t c) {
 #ifdef POLYMORPHIC
   return vmlaq(a, b, c);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlaq_n_u8(a, b, c);
 #endif /* POLYMORPHIC */
 }
@@ -199,7 +199,7 @@ uint8x16_t test_vmlaq_n_u8(uint8x16_t a, uint8x16_t b, uint8_t c) {
 uint16x8_t test_vmlaq_n_u16(uint16x8_t a, uint16x8_t b, uint16_t c) {
 #ifdef POLYMORPHIC
   return vmlaq(a, b, c);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlaq_n_u16(a, b, c);
 #endif /* POLYMORPHIC */
 }
@@ -215,7 +215,7 @@ uint16x8_t test_vmlaq_n_u16(uint16x8_t a, uint16x8_t b, uint16_t c) {
 uint32x4_t test_vmlaq_n_u32(uint32x4_t a, uint32x4_t b, uint32_t c) {
 #ifdef POLYMORPHIC
   return vmlaq(a, b, c);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlaq_n_u32(a, b, c);
 #endif /* POLYMORPHIC */
 }
@@ -231,7 +231,7 @@ uint32x4_t test_vmlaq_n_u32(uint32x4_t a, uint32x4_t b, uint32_t c) {
 int8x16_t test_vmlasq_n_s8(int8x16_t a, int8x16_t b, int8_t c) {
 #ifdef POLYMORPHIC
   return vmlasq(a, b, c);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlasq_n_s8(a, b, c);
 #endif /* POLYMORPHIC */
 }
@@ -247,7 +247,7 @@ int8x16_t test_vmlasq_n_s8(int8x16_t a, int8x16_t b, int8_t c) {
 int16x8_t test_vmlasq_n_s16(int16x8_t a, int16x8_t b, int16_t c) {
 #ifdef POLYMORPHIC
   return vmlasq(a, b, c);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlasq_n_s16(a, b, c);
 #endif /* POLYMORPHIC */
 }
@@ -263,7 +263,7 @@ int16x8_t test_vmlasq_n_s16(int16x8_t a, int16x8_t b, int16_t c) {
 int32x4_t test_vmlasq_n_s32(int32x4_t a, int32x4_t b, int32_t c) {
 #ifdef POLYMORPHIC
   return vmlasq(a, b, c);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlasq_n_s32(a, b, c);
 #endif /* POLYMORPHIC */
 }
@@ -279,7 +279,7 @@ int32x4_t test_vmlasq_n_s32(int32x4_t a, int32x4_t b, int32_t c) {
 uint8x16_t test_vmlasq_n_u8(uint8x16_t a, uint8x16_t b, uint8_t c) {
 #ifdef POLYMORPHIC
   return vmlasq(a, b, c);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlasq_n_u8(a, b, c);
 #endif /* POLYMORPHIC */
 }
@@ -295,7 +295,7 @@ uint8x16_t test_vmlasq_n_u8(uint8x16_t a, uint8x16_t b, uint8_t c) {
 uint16x8_t test_vmlasq_n_u16(uint16x8_t a, uint16x8_t b, uint16_t c) {
 #ifdef POLYMORPHIC
   return vmlasq(a, b, c);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlasq_n_u16(a, b, c);
 #endif /* POLYMORPHIC */
 }
@@ -311,7 +311,7 @@ uint16x8_t test_vmlasq_n_u16(uint16x8_t a, uint16x8_t b, uint16_t c) {
 uint32x4_t test_vmlasq_n_u32(uint32x4_t a, uint32x4_t b, uint32_t c) {
 #ifdef POLYMORPHIC
   return vmlasq(a, b, c);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlasq_n_u32(a, b, c);
 #endif /* POLYMORPHIC */
 }
@@ -463,7 +463,7 @@ float32x4_t test_vfmsq_m_f32(float32x4_t a, float32x4_t b, float32x4_t c, mve_pr
 int8x16_t test_vmlaq_m_n_s8(int8x16_t a, int8x16_t b, int8_t c, mve_pred16_t p) {
 #ifdef POLYMORPHIC
   return vmlaq_m(a, b, c, p);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlaq_m_n_s8(a, b, c, p);
 #endif /* POLYMORPHIC */
 }
@@ -479,7 +479,7 @@ int8x16_t test_vmlaq_m_n_s8(int8x16_t a, int8x16_t b, int8_t c, mve_pred16_t p) 
 int16x8_t test_vmlaq_m_n_s16(int16x8_t a, int16x8_t b, int16_t c, mve_pred16_t p) {
 #ifdef POLYMORPHIC
   return vmlaq_m(a, b, c, p);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlaq_m_n_s16(a, b, c, p);
 #endif /* POLYMORPHIC */
 }
@@ -494,7 +494,7 @@ int16x8_t test_vmlaq_m_n_s16(int16x8_t a, int16x8_t b, int16_t c, mve_pred16_t p
 int32x4_t test_vmlaq_m_n_s32(int32x4_t a, int32x4_t b, int32_t c, mve_pred16_t p) {
 #ifdef POLYMORPHIC
   return vmlaq_m(a, b, c, p);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlaq_m_n_s32(a, b, c, p);
 #endif /* POLYMORPHIC */
 }
@@ -510,7 +510,7 @@ int32x4_t test_vmlaq_m_n_s32(int32x4_t a, int32x4_t b, int32_t c, mve_pred16_t p
 uint8x16_t test_vmlaq_m_n_u8(uint8x16_t a, uint8x16_t b, uint8_t c, mve_pred16_t p) {
 #ifdef POLYMORPHIC
   return vmlaq_m(a, b, c, p);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlaq_m_n_u8(a, b, c, p);
 #endif /* POLYMORPHIC */
 }
@@ -526,7 +526,7 @@ uint8x16_t test_vmlaq_m_n_u8(uint8x16_t a, uint8x16_t b, uint8_t c, mve_pred16_t
 uint16x8_t test_vmlaq_m_n_u16(uint16x8_t a, uint16x8_t b, uint16_t c, mve_pred16_t p) {
 #ifdef POLYMORPHIC
   return vmlaq_m(a, b, c, p);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlaq_m_n_u16(a, b, c, p);
 #endif /* POLYMORPHIC */
 }
@@ -541,7 +541,7 @@ uint16x8_t test_vmlaq_m_n_u16(uint16x8_t a, uint16x8_t b, uint16_t c, mve_pred16
 uint32x4_t test_vmlaq_m_n_u32(uint32x4_t a, uint32x4_t b, uint32_t c, mve_pred16_t p) {
 #ifdef POLYMORPHIC
   return vmlaq_m(a, b, c, p);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlaq_m_n_u32(a, b, c, p);
 #endif /* POLYMORPHIC */
 }
@@ -557,7 +557,7 @@ uint32x4_t test_vmlaq_m_n_u32(uint32x4_t a, uint32x4_t b, uint32_t c, mve_pred16
 int8x16_t test_vmlasq_m_n_s8(int8x16_t a, int8x16_t b, int8_t c, mve_pred16_t p) {
 #ifdef POLYMORPHIC
   return vmlasq_m(a, b, c, p);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlasq_m_n_s8(a, b, c, p);
 #endif /* POLYMORPHIC */
 }
@@ -573,7 +573,7 @@ int8x16_t test_vmlasq_m_n_s8(int8x16_t a, int8x16_t b, int8_t c, mve_pred16_t p)
 int16x8_t test_vmlasq_m_n_s16(int16x8_t a, int16x8_t b, int16_t c, mve_pred16_t p) {
 #ifdef POLYMORPHIC
   return vmlasq_m(a, b, c, p);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlasq_m_n_s16(a, b, c, p);
 #endif /* POLYMORPHIC */
 }
@@ -588,7 +588,7 @@ int16x8_t test_vmlasq_m_n_s16(int16x8_t a, int16x8_t b, int16_t c, mve_pred16_t 
 int32x4_t test_vmlasq_m_n_s32(int32x4_t a, int32x4_t b, int32_t c, mve_pred16_t p) {
 #ifdef POLYMORPHIC
   return vmlasq_m(a, b, c, p);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlasq_m_n_s32(a, b, c, p);
 #endif /* POLYMORPHIC */
 }
@@ -604,7 +604,7 @@ int32x4_t test_vmlasq_m_n_s32(int32x4_t a, int32x4_t b, int32_t c, mve_pred16_t 
 uint8x16_t test_vmlasq_m_n_u8(uint8x16_t a, uint8x16_t b, uint8_t c, mve_pred16_t p) {
 #ifdef POLYMORPHIC
   return vmlasq_m(a, b, c, p);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlasq_m_n_u8(a, b, c, p);
 #endif /* POLYMORPHIC */
 }
@@ -620,7 +620,7 @@ uint8x16_t test_vmlasq_m_n_u8(uint8x16_t a, uint8x16_t b, uint8_t c, mve_pred16_
 uint16x8_t test_vmlasq_m_n_u16(uint16x8_t a, uint16x8_t b, uint16_t c, mve_pred16_t p) {
 #ifdef POLYMORPHIC
   return vmlasq_m(a, b, c, p);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlasq_m_n_u16(a, b, c, p);
 #endif /* POLYMORPHIC */
 }
@@ -635,7 +635,7 @@ uint16x8_t test_vmlasq_m_n_u16(uint16x8_t a, uint16x8_t b, uint16_t c, mve_pred1
 uint32x4_t test_vmlasq_m_n_u32(uint32x4_t a, uint32x4_t b, uint32_t c, mve_pred16_t p) {
 #ifdef POLYMORPHIC
   return vmlasq_m(a, b, c, p);
-#else /* POLYMORPHIC */
+#else  /* POLYMORPHIC */
   return vmlasq_m_n_u32(a, b, c, p);
 #endif /* POLYMORPHIC */
 }
