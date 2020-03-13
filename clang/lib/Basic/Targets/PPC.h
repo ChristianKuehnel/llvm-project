@@ -369,7 +369,7 @@ public:
   }
 
   BuiltinVaListKind getBuiltinVaListKind() const override {
-    // This is the ELF definition, and is overridden by the Darwin sub-target
+    // This is the ELF definition, and is overridden by the Darwin and AIX sub-target
     return TargetInfo::PowerABIBuiltinVaList;
   }
 };

@@ -4229,7 +4229,7 @@ CharUnits PPC32_SVR4_ABIInfo::getParamTypeAlignment(QualType Ty) const {
 // DefaultABIInfo::EmitVAArg.
 Address PPC32_SVR4_ABIInfo::EmitVAArg(CodeGenFunction &CGF, Address VAList,
                                       QualType Ty) const {
-  if (getTarget().getTriple().isOSDarwin()) {
+  if (getTarget().getTriple().isOSDarwin() || getTarget().getTriple().isOSAIX()) {
     auto TI = getContext().getTypeInfoInChars(Ty);
     TI.second = getParamTypeAlignment(Ty);
 
@@ -9921,7 +9921,9 @@ const TargetCodeGenInfo &CodeGenModule::getTargetCodeGenInfo() {
         new PPC32TargetCodeGenInfo(Types, CodeGenOpts.FloatABI == "soft" ||
                                    getTarget().hasFeature("spe")));
   case llvm::Triple::ppc64:
-    if (Triple.isOSBinFormatELF()) {
+    // TODO: Add AIX ABI Info.  Currently we are relying on
+    // PPC64/PPC32_SVR4_ABIInfo.
+    if (Triple.isOSBinFormatELF() || Triple.isOSAIX()) {
       PPC64_SVR4_ABIInfo::ABIKind Kind = PPC64_SVR4_ABIInfo::ELFv1;
       if (getTarget().getABI() == "elfv2")
         Kind = PPC64_SVR4_ABIInfo::ELFv2;
