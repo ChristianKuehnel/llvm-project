@@ -146,13 +146,6 @@ TargetTransformInfo &TargetTransformInfo::operator=(TargetTransformInfo &&RHS) {
   return *this;
 }
 
-int TargetTransformInfo::getOperationCost(unsigned Opcode, Type *Ty,
-                                          Type *OpTy) const {
-  int Cost = TTIImpl->getOperationCost(Opcode, Ty, OpTy);
-  assert(Cost >= 0 && "TTI should not produce negative costs!");
-  return Cost;
-}
-
 int TargetTransformInfo::getCallCost(FunctionType *FTy, int NumArgs,
                                      const User *U) const {
   int Cost = TTIImpl->getCallCost(FTy, NumArgs, U);
